@@ -1,0 +1,33 @@
+@startuml biblioteca
+class Usuario{
+    +password : str
+    +encryptar(password) : 
+    +verificacion()
+}
+class Libro{
+    +titulo: str
+    +autor: str
+    +isbn : int
+    +fecha_de_publicacion: fecha
+    +editoria : str
+    +numero_de_copias_disponible : int
+   
+}
+class Base_de_datos{
+
+}
+class Menu{
+    + ingreso()
+    +modificacion()
+    +eliminicion()
+}
+class Reporte{
+    +disponible(Libro) : lst
+}
+Usuario -- Menu
+Libro o-- Menu
+Menu --o Base_de_datos
+Reporte *-- Base_de_datos
+
+
+@enduml
